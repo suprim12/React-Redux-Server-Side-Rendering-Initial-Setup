@@ -1,0 +1,227 @@
+.audio-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #d6f0f4;
+    margin: 1rem 0rem;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1px;
+
+    &--header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid $primary-color;
+
+        .audio-play {
+            display: flex;
+            height: 100%;
+            max-width: 80px;
+            cursor: pointer;
+            border-right: 1px solid $primary-color;
+
+            // border-radius: 5px;
+
+            &.active {
+                .play-icon {
+                    display: none;
+                }
+
+                .pause-icon {
+                    display: block;
+                }
+            }
+
+            .play-icon {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .pause-icon {
+                display: none;
+                width: 100%;
+                height: 100%;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            svg path {
+                fill: $primary-color;
+            }
+        }
+
+        .audio-timeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            // border-radius: 5px;
+            // border: 1px solid $primary-color;
+
+            .audio-time-range {
+                display: flex;
+                width: 100%;
+            }
+
+            input {
+                display: flex;
+                width: 100%;
+            }
+        }
+
+        .audio-time-current,
+        .audio-time-duration {
+            width: 80px;
+            padding: 0rem 1rem;
+            font-weight: 600;
+            color: $primary-color;
+        }
+    }
+
+    &--controlls {
+        display: flex;
+        height: 50px;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0rem 1rem;
+            border-right: 1px solid $primary-color;
+
+            .audio-volume {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                padding-left: 2rem;
+                padding-right: 0.5rem;
+
+                svg {
+                    width: 25px;
+                    height: 25px;
+
+                    path {
+                        fill: $primary-color;
+                    }
+                }
+
+                input {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+#audio {
+    display: none;
+}
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $primary-color;
+    height: calc(100vh - 50px);
+    padding: 1rem;
+    padding-top: 2rem;
+
+    .actions-wrapper {
+        position: sticky;
+        width: 100%;
+        top: 10px;
+    }
+
+    &-timer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+
+        svg {
+            width: 40px;
+            height: 40px;
+
+            path {
+                color: #fff;
+            }
+        }
+    }
+
+    &-btns {
+        display: flex;
+        flex-direction: column;
+
+        &--item {
+            display: flex;
+            margin-bottom: 1rem;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                padding: 0.875rem 1rem;
+                border-radius: 5px;
+                background-color: #fff;
+                border: none;
+                cursor: pointer;
+                font-weight: bold;
+                transition: all 0.2s ease-in;
+                outline: none;
+                user-select: none;
+                color: $primary-color;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 1rem;
+
+                    path {
+                        fill: $primary-color;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
+
+.actions-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.start-btn {
+    position: relative;
+    z-index: 12;
+}
